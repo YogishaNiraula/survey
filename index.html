@@ -12,72 +12,98 @@
 </head>
 
 <body>
-    <header>
-        <a href="#">Woodland</a>
-    </header>
-    <form action="blah">
-        <section>
-            <label for="first">Is this first time you are using our products and services?</label>
-            <input type="radio" name="first" id="yes">yes
-            <input type="radio" name="first" id="no">no
-        </section>
-        <div class="container">
-            <div class="stars">
-                <input type="radio" name="star" id="rate-5">
-                <label for="rate-5"><i class="fa fa-star"></i></label>
-                <input type="radio" name="star" id="rate-4">
-                <label for="rate-4"><i class="fa fa-star"></i></label>
-                <input type="radio" name="star" id="rate-3">
-                <label for="rate-3"><i class="fa fa-star"></i></label>
-                <input type="radio" name="star" id="rate-2">
-                <label for="rate-2"><i class="fa fa-star"></i></label>
-                <input type="radio" name="star" id="rate-1">
-                <label for="rate-1"><i class="fa fa-star"></i></label>
+    <div id="app">
+        <header>
+            <a href="#">Woodland</a>
+        </header>
+        <form action="blah">
+            <section>
+                <label for="first">Is this first time you are using our products and services?</label>
+                <input type="radio" name="first" id="yes">yes
+                <input type="radio" name="first" id="no">no
+            </section>
+            <div class="container">
+                <div class="stars reverse">
+                    <input type="radio" name="star" id="rate-5">
+                    <label for="rate-5"><i class="fa fa-star"></i></label>
+                    <input type="radio" name="star" id="rate-4">
+                    <label for="rate-4"><i class="fa fa-star"></i></label>
+                    <input type="radio" name="star" id="rate-3">
+                    <label for="rate-3"><i class="fa fa-star"></i></label>
+                    <input type="radio" name="star" id="rate-2">
+                    <label for="rate-2"><i class="fa fa-star"></i></label>
+                    <input type="radio" name="star" id="rate-1">
+                    <label for="rate-1"><i class="fa fa-star"></i></label>
+                </div>
             </div>
-        </div>
-        <!--need to add stars with vue??-->
-        <section class="container2">
-            <p>Product quality</p>
-            {{content}}
-        </section>
-        <section class="container">Speed of service</section>
-        <section class="container">Pricing</section>
-        <section class="container">Overall quality</section>
-        <section>
-            <label for="recommend">Would you recommend it to your friends and colleagues?
-                <input type="radio" name="recommend" id="yes">yes
-                <input type="radio" name="recommend" id="no">no
-            </label>
-        </section>
-        <section>
-            <label for="suggestion">Do you have any suggestions to improve our product and services?
-                <input type="radio" name="suggestion" id="yes">yes
-                <input type="radio" name="suggestion" id="no"> no
-            </label>
-        </section>
-        <!--textbox once suggestion yes is clicked-->
-        <div>
-            <input type="text" name="box" id="box">
-        </div>
-        <p>Please leave us your email address if you would like to contact us regarding any questions.</p>
-        <section>
-            <label for="name">Name
-                <input type="text" name="name" id="name">
-            </label>
-            <label for="email">Email
-                <input type="email" name="email" id="email">
-            </label>
-        </section>
-        <button type="submit">Submit</button>
-        <!--after submitting display this-->
-        <p>Thank you for completing our survey</p>
-    </form>
+            <!--need to add stars with vue??-->
+            <section class="container">
+                <p>Product quality</p>
+                <div v-html="content"></div>
+            </section>
+            <section class="container">
+                <p>Speed of service</p>
+                <div v-html="content"></div>
+            </section>
+            <section class="container">
+                <p>Pricing</p>
+                <div v-html="content"></div>
+            </section>
+            <section class="container">
+                <p>Overall quality</p>
+                <div v-html="content"></div>
+            </section>
+            <section>
+                <label for="recommend">Would you recommend it to your friends and colleagues?
+                    <input type="radio" name="recommend" id="yes">yes
+                    <input type="radio" name="recommend" id="no">no
+                </label>
+            </section>
+            <section>
+                <label for="suggestion">Do you have any suggestions to improve our product and services?
+                    <input type="radio" name="suggestion" id="yes">yes
+                    <input type="radio" name="suggestion" id="no"> no
+                </label>
+            </section>
+            <!--textbox once suggestion yes is clicked-->
+            <div>
+                <input type="text" name="box" id="box">
+            </div>
+            <p>Please leave us your email address if you would like to contact us regarding any questions.</p>
+            <section>
+                <label for="name">Name
+                    <input type="text" name="name" id="name">
+                </label>
+                <label for="email">Email
+                    <input type="email" name="email" id="email">
+                </label>
+            </section>
+            <button type="submit">Submit</button>
+            <!--after submitting display this-->
+            <p>Thank you for completing our survey</p>
+        </form>
+    </div>
 </body>
 <script>
     const common = {};
     const element = new Vue({
-        el: ".container2",
-        data: { content: "" }
+        el: "#app",
+        data: {
+            content: '<div class="container">' +
+                '<div class="stars reverse">' +
+                '<input type="radio" name="star" id="rate-5">' +
+                '<label for="rate-5"><i class="fa fa-star"></i></label>' +
+                '<input type="radio" name="star" id="rate-4">' +
+                '<label for="rate-4"><i class="fa fa-star"></i></label>' +
+                '<input type="radio" name="star" id="rate-3">' +
+                '<label for="rate-3"><i class="fa fa-star"></i></label>' +
+                '<input type="radio" name="star" id="rate-2">' +
+                '<label for="rate-2"><i class="fa fa-star"></i></label>' +
+                '<input type="radio" name="star" id="rate-1">' +
+                '<label for="rate-1"><i class="fa fa-star"></i></label>' +
+                '</div>' +
+                '</div>'
+        }
     })
 </script>
 

@@ -2,6 +2,10 @@ body, html{
     padding: 0px;
     margin: 0px;
 }
+.reverse{
+    display: flex;
+    flex-direction: row-reverse;
+}
 .container .stars input {
     display: none;
 }

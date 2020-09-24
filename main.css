@@ -1,6 +1,23 @@
 body, html{
     padding: 0px;
     margin: 0px;
+    background: rgb(179, 177, 177);
+}
+header{
+    text-align: center;
+    padding: 10px;
+}
+header a{
+    text-decoration: none;
+    color: black;
+    font-size: 40px;
+}
+form{
+    font-size: 25px;
+    padding: 45px;
+}
+.meh{
+    line-height: 40px;
 }
 .reverse{
     display: flex;
@@ -21,3 +38,37 @@ body, html{
 .stars input:checked~label{
     color: yellow;
 }
+#box{
+    display: none;
+}
+.line{
+    height: 2px;
+    width: 100;
+    background-color:  rgb(224, 224, 224);
+}
+.bee{
+    text-align: center;
+}
+.nene{
+    display: flex;
+    justify-content: space-evenly;
+    margin:20px;
+    height: 60px;
+}
+#name, #email{
+    font-size: 20px;
+    width: 400px;
+}
+.button{
+    background-color: rgb(112, 231, 112);
+    font-size: 30px;
+    color: rgb(56, 56, 56);
+    margin-top: 55px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/*.disappear{
+    display: none;
+}*/

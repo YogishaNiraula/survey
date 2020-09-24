@@ -16,11 +16,14 @@
         <header>
             <a href="#">Woodland</a>
         </header>
-        <form action="blah">
-            <section>
-                <label for="first">Is this first time you are using our products and services?</label>
-                <input type="radio" name="first" id="yes">yes
-                <input type="radio" name="first" id="no">no
+        <form>
+            <section class="meh">
+                <label for="first">Is this first time you are using our products and services?<br>
+                    <input type="radio" name="first" id="yes">
+                    <label for="yes">Yes</label><br>
+                    <input type="radio" name="first" id="no">
+                    <label for="yes">No</label>
+                </label>
             </section>
             <div class="container">
                 <div class="stars reverse">
@@ -36,56 +39,65 @@
                     <label for="rate-1"><i class="fa fa-star"></i></label>
                 </div>
             </div>
-            <!--need to add stars with vue??-->
-            <section class="container">
+            <!--added stars with vue :) -->
+            <section>
                 <p>Product quality</p>
                 <div v-html="content"></div>
             </section>
-            <section class="container">
+            <section>
                 <p>Speed of service</p>
                 <div v-html="content"></div>
             </section>
-            <section class="container">
+            <section>
                 <p>Pricing</p>
                 <div v-html="content"></div>
             </section>
-            <section class="container">
+            <section>
                 <p>Overall quality</p>
                 <div v-html="content"></div>
             </section>
-            <section>
-                <label for="recommend">Would you recommend it to your friends and colleagues?
-                    <input type="radio" name="recommend" id="yes">yes
-                    <input type="radio" name="recommend" id="no">no
+            <section class="meh">
+                <label for="recommend">Would you recommend it to your friends and colleagues?<br>
+                    <input type="radio" name="recommend" id="yes">
+                    <label for="yes">Yes</label><br>
+                    <input type="radio" name="recommend" id="no">
+                    <label for="no">No</label>
                 </label>
             </section>
-            <section>
-                <label for="suggestion">Do you have any suggestions to improve our product and services?
-                    <input type="radio" name="suggestion" id="yes">yes
-                    <input type="radio" name="suggestion" id="no"> no
+            <section class="meh">
+                <label for="suggestion">Do you have any suggestions to improve our products and services?<br>
+                    <label for="yes"><input v-onclick="displayBox" type="radio" name="suggestion" id="yes">Yes
+                    </label><br>
+                    <label for="no"><input type="radio" name="suggestion" id="no">No
+                    </label><br>
                 </label>
             </section>
             <!--textbox once suggestion yes is clicked-->
             <div>
-                <input type="text" name="box" id="box">
+                <input type="text" name="box" id="box" placeholder="Write your comments here....">
             </div>
-            <p>Please leave us your email address if you would like to contact us regarding any questions.</p>
-            <section>
+            <div class="line"></div>
+            <p class="bee">Please leave us your email address if you would like to contact us regarding any questions.
+            </p>
+            <section class="nene">
                 <label for="name">Name
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="name" id="name" placeholder="Enter your name...">
                 </label>
                 <label for="email">Email
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="email" id="email" placeholder="Enter your email...">
                 </label>
             </section>
-            <button type="submit">Submit</button>
+            <div class="line"></div>
+            <label for="button">
+                <input class="button" type="submit" value="Submit">
+            </label>
             <!--after submitting display this-->
-            <p>Thank you for completing our survey</p>
+            <p class="disappear">Thank you for completing our survey</p>
         </form>
     </div>
 </body>
 <script>
-    const common = {};
+    const common = document.getElementById("box");
     const element = new Vue({
         el: "#app",
         data: {
@@ -103,6 +115,12 @@
                 '<label for="rate-1"><i class="fa fa-star"></i></label>' +
                 '</div>' +
                 '</div>'
+        },
+        methods: {
+            displayBox: function (displayBox) {
+                return common;
+            },
+
         }
     })
 </script>

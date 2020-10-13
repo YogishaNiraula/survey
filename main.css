@@ -1,73 +1,78 @@
-body, html{
-    padding: 0px;
-    margin: 0px;
-    background: rgb(179, 177, 177);
+body,
+html {
+  padding: 0px;
+  margin: 0px;
+  background: rgb(179, 177, 177);
 }
-header{
-    text-align: center;
-    padding: 10px;
+
+header {
+  text-align: center;
+  padding: 10px;
 }
-header a{
-    text-decoration: none;
-    color: black;
-    font-size: 40px;
+header a {
+  text-decoration: none;
+  color: black;
+  font-size: 40px;
 }
-form{
-    font-size: 25px;
-    padding: 45px;
+form {
+  font-size: 25px;
+  padding: 45px;
 }
-.meh{
-    line-height: 40px;
+.meh {
+  line-height: 40px;
 }
-.reverse{
-    display: flex;
-    flex-direction: row-reverse;
+.reverse {
+  display: flex;
+  flex-direction: row-reverse;
 }
 .container .stars input {
-    display: none;
+  display: none;
 }
-.stars label{
-    font-size: 30px;
-    color: gray;
-    padding: 10px;
+.stars label {
+  font-size: 30px;
+  color: gray;
+  padding: 10px;
 }
-.stars input:not(:checked)~ label:hover,
-.stars input:not(:checked)~ label:hover~ label{
-    color: yellow;
+.stars input:not(:checked) ~ label:hover,
+.stars input:not(:checked) ~ label:hover ~ label {
+  color: yellow;
 }
-.stars input:checked~label{
-    color: yellow;
+.stars input:checked ~ label {
+  color: yellow;
 }
-#box{
-    display: none;
+#box {
+  height: 170px;
+  width: 570px;
+  display: none;
 }
-.line{
-    height: 2px;
-    width: 100;
-    background-color:  rgb(224, 224, 224);
+.line {
+  height: 2px;
+  width: 100;
+  background-color: rgb(224, 224, 224);
 }
-.bee{
-    text-align: center;
+.bee {
+  text-align: center;
 }
-.nene{
-    display: flex;
-    justify-content: space-evenly;
-    margin:20px;
-    height: 60px;
+.nene {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px;
+  height: 60px;
 }
-#name, #email{
-    font-size: 20px;
-    width: 400px;
+#name,
+#email {
+  font-size: 20px;
+  width: 400px;
 }
-.button{
-    background-color: rgb(112, 231, 112);
-    font-size: 30px;
-    color: rgb(56, 56, 56);
-    margin-top: 55px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.button {
+  background-color: rgb(112, 231, 112);
+  font-size: 30px;
+  color: rgb(56, 56, 56);
+  margin-top: 55px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 /*.disappear{
     display: none;

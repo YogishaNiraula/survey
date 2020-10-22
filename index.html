@@ -7,7 +7,6 @@
   <title>Customer survey form</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <link rel="stylesheet" href="main.css" />
 </head>
 
@@ -68,14 +67,15 @@
         <label for="suggestion">Do you have any suggestions to improve our products and
           services?<br />
           <label for="yes">
-            <input type="radio" value="yes" name="suggestion" id="thisyes" />Yes
+            <input type="radio" @click="box=true" value="yes" name="suggestion" id="thisyes" />Yes
           </label><br />
-          <label for="no"><input type="radio" value="no" name="suggestion" id="no" />No </label><br />
+          <label for="no"><input @click="box=false" type="radio" value="no" name="suggestion" id="no" />No
+          </label><br />
         </label>
       </section>
       <!--textbox once suggestion yes is clicked-->
       <div>
-        <input type="text" name="box" id="box" placeholder="Write your comments here...." />
+        <textarea v-show="box" name="box" id="box" placeholder="Write your comments here...."></textarea>
       </div>
       <div class="line"></div>
       <p class="bee">
@@ -99,6 +99,7 @@
     </form>
   </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="main.js"></script>
 <script>
   const element = new Vue({
@@ -119,6 +120,7 @@
         '<label for="rate-1"><i class="fa fa-star"></i></label>' +
         "</div>" +
         "</div>",
+      box: false,
     }
   });
 </script>

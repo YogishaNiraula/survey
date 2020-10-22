@@ -1,38 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+<style>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-</head>
+</style>
 
-<body>
-    <div class="container">
-        <div v-for="items in items">
-            <section id="nice">
-                yes
-            </section>
-            <section id="nice">
-                yes1
-            </section>
-            <section id="nice">
-                yes2
-            </section>
-        </div>
-    </div>
-</body>
+<div id="root">
+    <form>
+        <label for="yes">
+            <input type="radio" @click="bx=true" name="choice" id="yes" value="yes">yes
+        </label>
+        <label for="no">
+            <input type="radio" @click="bx=false" name="choice" id="no" value="no">no
+        </label>
+        <label for="box">
+            <input type="text" v-show="bx" name="box" id="box" placeholder="enter here...">
+        </label>
+    </form>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
-    const element = new Vue({
-        el: ".container",
-        computed: {
-
+    let app = new Vue({
+        el: '#root',
+        data: {
+            bx: false
         }
-    }
     })
 
-
 </script>
-
-</html>

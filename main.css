@@ -2,7 +2,7 @@ body,
 html {
   padding: 0px;
   margin: 0px;
-  background: rgb(179, 177, 177);
+  background: rgb(230, 229, 229);
 }
 
 header {
@@ -47,7 +47,7 @@ form {
 .line {
   height: 2px;
   width: 100;
-  background-color: rgb(224, 224, 224);
+  background-color: rgb(82, 82, 82);
 }
 .bee {
   text-align: center;
@@ -63,16 +63,6 @@ form {
   font-size: 20px;
   width: 400px;
 }
-.button {
-  background-color: rgb(112, 231, 112);
-  font-size: 30px;
-  color: rgb(56, 56, 56);
-  margin-top: 55px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+#button {
+  margin: 35px;
 }
-/*.disappear{
-    display: none;
-}*/

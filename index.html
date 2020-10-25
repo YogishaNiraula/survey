@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
   <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
 </head>
 
 <body>
@@ -90,13 +91,13 @@
           <input type="email" name="email" id="email" placeholder="Enter your email..." />
         </label>
       </section>
-      <div class="line"></div>
-      <label for="button">
-        <input class="button" type="submit" value="Submit" />
-      </label>
-      <!--after submitting display this-->
-
     </form>
+    <div class="line"></div>
+    <button id="button" class="button is-success" @click="showModal=true">Submit</button>
+    <!--after submitting display this-->
+    <modal v-if="showModal" @close="showModal=false">
+      <p>Thank you for completing our survey!</p>
+    </modal>
   </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -121,6 +122,7 @@
         "</div>" +
         "</div>",
       box: false,
+      showModal: false
     }
   });
 </script>

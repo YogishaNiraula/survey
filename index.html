@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
   <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
 </head>
 
@@ -25,36 +26,24 @@
           <label for="yes">No</label>
         </label>
       </section>
-      <div class="container">
-        <div class="stars reverse">
-          <input type="radio" name="star" id="rate-5" />
-          <label for="rate-5"><i class="fa fa-star"></i></label>
-          <input type="radio" name="star" id="rate-4" />
-          <label for="rate-4"><i class="fa fa-star"></i></label>
-          <input type="radio" name="star" id="rate-3" />
-          <label for="rate-3"><i class="fa fa-star"></i></label>
-          <input type="radio" name="star" id="rate-2" />
-          <label for="rate-2"><i class="fa fa-star"></i></label>
-          <input type="radio" name="star" id="rate-1" />
-          <label for="rate-1"><i class="fa fa-star"></i></label>
-        </div>
-      </div>
       <!--added stars with vue :) -->
       <section>
-        <p>Product quality</p>
-        <div v-html="content"></div>
+        <span>
+          <p>Product quality</p>
+          <stars total="5" defaultrating="1"></stars>
+        </span>
       </section>
       <section>
         <p>Speed of service</p>
-        <div v-html="content"></div>
+        <stars total="5" defaultrating="1"></stars>
       </section>
       <section>
         <p>Pricing</p>
-        <div v-html="content"></div>
+        <stars total="5" defaultrating="1"></stars>
       </section>
       <section>
         <p>Overall quality</p>
-        <div v-html="content"></div>
+        <stars total="5" defaultrating="1"></stars>
       </section>
       <section class="meh">
         <label for="recommend">Would you recommend it to your friends and colleagues?<br />
@@ -64,7 +53,7 @@
           <label for="no">No</label>
         </label>
       </section>
-      <section class="meh">
+      <section class="meh container">
         <label for="suggestion">Do you have any suggestions to improve our products and
           services?<br />
           <label for="yes">
@@ -73,23 +62,30 @@
           <label for="no"><input @click="box=false" type="radio" value="no" name="suggestion" id="no" />No
           </label><br />
         </label>
+        <!--textbox once suggestion yes is clicked-->
+        <div>
+          <textarea class="textarea" v-show="box" name="box" id="box"
+            placeholder="Write your comments here...."></textarea>
+        </div>
       </section>
-      <!--textbox once suggestion yes is clicked-->
-      <div>
-        <textarea v-show="box" name="box" id="box" placeholder="Write your comments here...."></textarea>
-      </div>
       <div class="line"></div>
       <p class="bee">
         Please leave us your email address if you would like to contact us
         regarding any questions.
       </p>
-      <section class="nene">
-        <label for="name">Name
-          <input type="text" name="name" id="name" placeholder="Enter your name..." />
-        </label>
-        <label for="email">Email
-          <input type="email" name="email" id="email" placeholder="Enter your email..." />
-        </label>
+      <section class="container">
+        <div class="field">
+          <label for="name">Name</label>
+          <div class="control">
+            <input class="input" type="text" name="name" id="name" placeholder="Enter your name..." />
+          </div>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <div class="control">
+            <input class="input" type="email" name="email" id="email" placeholder="Enter your email..." />
+          </div>
+        </div>
       </section>
     </form>
     <div class="line"></div>
@@ -105,25 +101,17 @@
 <script>
   let element = new Vue({
     el: "#app",
-    data: {
-      content:
-        '<div class="container">' +
-        '<div class="stars reverse">' +
-        '<input type="radio" name="star" id="rate-5">' +
-        '<label for="rate-5"><i class="fa fa-star"></i></label>' +
-        '<input type="radio" name="star" id="rate-4">' +
-        '<label for="rate-4"><i class="fa fa-star"></i></label>' +
-        '<input type="radio" name="star" id="rate-3">' +
-        '<label for="rate-3"><i class="fa fa-star"></i></label>' +
-        '<input type="radio" name="star" id="rate-2">' +
-        '<label for="rate-2"><i class="fa fa-star"></i></label>' +
-        '<input type="radio" name="star" id="rate-1">' +
-        '<label for="rate-1"><i class="fa fa-star"></i></label>' +
-        "</div>" +
-        "</div>",
-      box: false,
-      showModal: false
-    }
+    data: function () {
+      return {
+        total: 20,
+        defaultrating: 0,
+        box: false,
+        showModal: false,
+      };
+    },
+    methods: {
+      log: (data) => console.log("rated: ", data),
+    },
   });
 </script>
 
